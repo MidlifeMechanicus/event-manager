@@ -1,7 +1,7 @@
 require "csv"
 require "time"
 
-def find_call_hour string
+def find_call_hour(string)
   Time.parse(string[:regdate][-5..-1]).hour
 end
 

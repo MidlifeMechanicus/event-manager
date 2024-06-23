@@ -1,13 +1,13 @@
 require "csv"
 require "date"
 
-def find_call_day string
+def find_call_day(string)
   date = Date.strptime(string[:regdate][0..-6].strip.insert(-3, "20"), "%m/%d/%Y")
   date.wday
   # format is month day year, the us standard
 end
 
-def find_week_days date_list
+def find_week_days(date_list)
   week_days = date_list.sort.map do |day|
     case day
     when 0
@@ -28,7 +28,6 @@ def find_week_days date_list
   end
   puts week_days.tally
 end
-
 
 puts "Day Targeting Initialized!"
 
