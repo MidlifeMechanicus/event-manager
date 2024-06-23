@@ -1,8 +1,8 @@
 require "csv"
 
 def clean_phone(phone)
-  # zipcode.to_s.rjust(5,"0")[0..4]
   raw_number = phone.gsub(/[^0-9]/, "")
+  # This replaces everything EXCEPT 0-9 with ""
   if raw_number.length < 10
     raw_number = "Bad Number"
   elsif raw_number.length > 10
